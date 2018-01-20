@@ -86,6 +86,7 @@ function createRock(x) {
      if (checkCollision(rock)) {
        endGame()
      } else if (top < GAME_HEIGHT) {
+       console.log("Got in the right if-section")
        top += 2
        rock.style.top = `${top}px`
      } else {
