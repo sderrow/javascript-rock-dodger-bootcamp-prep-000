@@ -93,6 +93,7 @@ function createRock(x) {
   }
 
   // We should kick off the animation of the rock around here
+  window.requestAnimationFrame(moveRock)
 
   // Add the rock to ROCKS so that we can remove all rocks
   // when there's a collision
@@ -110,6 +111,11 @@ function createRock(x) {
  */
 function endGame() {
   clearInterval(gameInterval)
+  for (let i = 0; i < ROCKS.length; i++) {
+    ROCKS[i].remove()
+  }
+  window.removeEventListener('keydown', moveDodger)
+  alert("YOU LOSE!")
 }
 
 function moveDodger(e) {
