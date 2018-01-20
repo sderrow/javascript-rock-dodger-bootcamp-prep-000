@@ -77,6 +77,8 @@ function createRock(x) {
      } else if (top < GAME_HEIGHT) {
        top += 2
        rock.style.top = top
+     } else {
+       rock.remove()
      }
 
     /**
