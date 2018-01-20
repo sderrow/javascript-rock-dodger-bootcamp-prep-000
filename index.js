@@ -161,6 +161,8 @@ function moveDodgerRight() {
    */
    var right = positionToInteger(getComputedStyle(DODGER, null).right)
    var left = positionToInteger(DODGER.style.left)
+   console.log(right)
+   console.log(left)
    function step() {
      if (right > 0) {
        DODGER.style.left = `${left + 4}px`
