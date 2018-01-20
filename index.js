@@ -86,12 +86,10 @@ function createRock(x) {
      top += 2
      rock.style.top = `${top}px`
      if (checkCollision(rock)) {
-       console.log("Ended game")
        endGame()
      } else if (top < GAME_HEIGHT) {
        window.requestAnimationFrame(moveRock)
      } else {
-       console.log("Removed rock")
        rock.remove()
      }
   }
@@ -166,7 +164,7 @@ function moveDodgerRight() {
    */
    var right = positionToInteger(getComputedStyle(DODGER, null).right)
    var left = positionToInteger(DODGER.style.left)
-   
+
    function step() {
      if (right > 0) {
        DODGER.style.left = `${left + 4}px`
