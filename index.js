@@ -59,7 +59,7 @@ function createRock(x) {
    * Now that we have a rock, we'll need to append
    * it to GAME and move it downwards.
    */
-
+   GAME.appendChild(rock);
 
   /**
    * This function moves the rock. (2 pixels at a time
@@ -72,6 +72,12 @@ function createRock(x) {
      * If a rock collides with the DODGER,
      * we should call endGame()
      */
+     if (checkCollision(rock)) {
+       endGame()
+     } else if (top < GAME_HEIGHT) {
+       top += 2
+       rock.style.top = top
+     }
 
     /**
      * Otherwise, if the rock hasn't reached the bottom of
@@ -101,6 +107,7 @@ function createRock(x) {
  * Finally, alert "YOU LOSE!" to the player.
  */
 function endGame() {
+  clearInterval(gameInterval)
 }
 
 function moveDodger(e) {
